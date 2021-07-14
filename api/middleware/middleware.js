@@ -15,8 +15,7 @@ function logger(req, res, next) {
 }
 
 async function validateUserId(req, res, next) {
-  const user = req.user
-  if (!user) {
+  if (!req.user) {
     res.status(404).json({ message: "user not found" })
   }
   next();
